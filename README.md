@@ -1,2 +1,3 @@
 # angularjs1-directives-test
-A la decouverte des directives avec AngularJS1
+
+Ceci est une découverte des directives basée sur mn test : gérer une authentification avec angularjs1

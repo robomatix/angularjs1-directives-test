@@ -1,0 +1,27 @@
+<h1>Directives ngMessages AngularJS 1</h1>
+
+
+<h3 class="panel-title">Formulaire avec messages avertissement dans un formulaire</h3>
+
+<form name="eventForm">
+<div class="field">
+    <label for="eventName">Event name :</label>
+    <input type="text"
+           name="eventName"
+           ng-model="event.name"
+           ng-minlength="5"
+           ng-maxlength="15"
+           ng-pattern="/^[a-z]+$/"
+           required/>
+
+    {{ eventForm.eventName.$error }}
+    <div ng-if="eventForm.eventName.$dirty" ng-messages="eventForm.eventName.$error">
+        <div ng-message="required">The event name is required</div>
+        <div ng-message="minlength">The event name is too short</div>
+        <div ng-message="maxlength">The event name is too long</div>
+        <div ng-message="pattern">The event name should be in lowercase</div>
+    </div>
+</div>
+
+<input type="submit"/>
+</form>

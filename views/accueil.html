@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Bienvenue {{authentication.userName}} !</h1>
+
+        <p data-ng-hide="authentication.isAuth">Si vous le voulez, vous pouvez vous rendre sur la page de login.</p>
+        <p data-ng-hide="authentication.isAuth">
+        <button type="button" class="btn btn-lg btn-primary" ui-sref="login">Allez sur la page de login</button>
+        </p>
+
+        <p data-ng-hide="!authentication.isAuth">Vous ête connecté...</p>
+    </div>
+</div>

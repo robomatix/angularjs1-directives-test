@@ -1,0 +1,131 @@
+<h1>Directives Input AngularJS 1</h1>
+
+<h2>Input Texte</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Formulaire vérifiant que le login soit bien un email et indiquant qu'il est
+            obligatoire...</h3>
+    </div>
+    <div class="panel-body">
+        <form name='loginForm'>
+            <input name='login' required type='email' ng-model='user.login'/>
+<span ng-show='loginForm.login.$dirty && loginForm.login.
+$error.required'>A login is required</span>
+<span ng-show='loginForm.login.$error.email'>Your login should be a
+valid email</span>
+            <input name='password' ng-model='user.password'/>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Input 3 caractères mini, 10 lettres maxi</h3>
+    </div>
+    <div class="panel-body">
+        <input type="text" name="firstname" ng-model="firstname"
+               ng-minlength="3" ng-maxlength="10" placeholder="3 <= word <= 10">
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Input caractères minuscules uniquement ( ne marche pas )</h3>
+    </div>
+    <div class="panel-body">
+        <input type="text" name="lowercase" ng-model="lowercase" ng-spattern="/^[az]+$/"
+               placeholder="lowercase only">
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Fonction appelée onChange</h3>
+    </div>
+    <div class="panel-body">
+        <input type="text" name="changed" ng-model="changed" ng-change="change()" placeholder="type to change">
+
+        <div>Counter {{ counter }}</div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Fonction appelée onChange, compteur avec et sans trimmed ( Attention, le même compteur est branché sur les deux inputs )</h3>
+    </div>
+    <div class="panel-body">
+        <input type="text" name="trimmed" ng-model="trimmed" ng-change="change()" ng-trim="true" placeholder="type to change">
+
+        <div>Length {{ trimmed.length }}</div>
+        <div>Counter {{ counter }}</div>
+
+        <div>Make space count</div>
+        <input type="text" name="trimmed2" ng-model="trimmed2" ng-change="change()" ng-trim="false" placeholder="type to change">
+        <div>Length {{ trimmed2.length }}</div>
+        <div>Counter {{ counter }}</div>
+    </div>
+</div>
+
+
+<h2>Input Number</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Min 18 Max 130</h3>
+    </div>
+    <div class="panel-body">
+        <input type="number" name="age" ngmodel="age" placeholder="012" min="18" max="130">
+    </div>
+</div>
+
+<h2>Input Mail</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mail Valide ?</h3>
+    </div>
+    <div class="panel-body">
+        <input type="email" name="email" ng-model="email" placeholder="mail@mail.com">
+    </div>
+</div>
+
+<h2>Input URL</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">URL Valide ?</h3>
+    </div>
+    <div class="panel-body">
+        <input type="url" name="url" ng-model="url" placeholder="url">
+    </div>
+</div>
+
+<h2>Input Date</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">URL Valide ?</h3>
+    </div>
+    <div class="panel-body">
+        <form name="userForm">
+            <input name="birthDate" type="date" ng-required="true" ng-model="
+user.birthDate"
+                   min="1900-01-01" max="2014-12-31">
+            <span ng-show="userForm.birthDate.$error.date">Date is incorrect</span>
+<span ng-show="userForm.birthDate.$error.min">Date should be after
+1900</span>
+<span ng-show="userForm.birthDate.$error.max">You should be born before
+2015</span>
+        </form>
+    </div>
+</div>
+
+<h2>Input Date</h2>
+
+<h2>input checkbox</h2>
+
+<h2>input radio</h2>
+
+
+

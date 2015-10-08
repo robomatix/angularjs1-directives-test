@@ -1,0 +1,25 @@
+<h1>Directives Select AngularJS 1</h1>
+
+<h2>Select</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            On génère un select depuis un tableau d'objet
+        </h3>
+    </div>
+    <div class="panel-body">
+        <select ng-model="member" ng-options="ninja.name for ninja in team"></select>
+
+
+        <select ng-model="member" ng-options="ninja.name group by ninja.gender for
+ninja in team"></select>
+        <div>{{member}}</div>
+        <select ng-model="member" ng-options="ninja.id as ninja.name for ninja in
+team"></select>
+
+        <select ng-model="member" ng-options="ninja.name disable when !ninja.available
+for ninja in team2"></select>
+
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Panel title</h2>
+    </div>
+    <div class="panel-body">
+
+        <poney></poney>
+
+        <poneycolor></poneycolor>
+
+        <div poney-color-arobase color="Blue">This text will be removed</div>
+
+        <div poney-color-ampersand alert-poney-clicked="alertPoneyClicked()">
+            This text will be removed
+        </div>
+
+    </div>
+
+    <div class="panel-footer">
+        <form name='poneyForm'>
+            Black Mamba is forbidden.
+            <input name='name' required ng-model='poney.name' forbidden-name/><br/>
+<span ng-show='poneyForm.name.$dirty && poneyForm.name.
+$error.forbiddenNameError'>This poney name is forbidden</span>
+        </form>
+    </div>
+
+
+</div>
